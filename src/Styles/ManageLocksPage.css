@@ -1,0 +1,17 @@
+
+#MainManageLocksPageDiv{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #e7ceb5;
+    left: 0px;
+    top: 0px;
+    overflow: auto;
+
+}
+
+#MainManageLocksPageDiv h1{
+    position: relative;
+    top: 100px;
+    color: #7e3c2d;
+}

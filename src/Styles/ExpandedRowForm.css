@@ -1,0 +1,113 @@
+
+#MainExpandedRowFormDiv{
+    margin: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    text-align: left;
+    justify-content: space-between;
+}
+
+#InputNameDiv{
+    position: relative;
+    left: 200px;
+}
+
+#InputEmailDiv{
+    position: relative;
+    left: 200px;
+}
+
+#AdminStatusDiv{
+    position: relative;
+    left: 200px;
+}
+#AdminStatusDiv input{
+
+}
+
+#VerifiedStatusDiv{
+    position: relative;
+    left: 200px;
+}
+
+#UpdateButtonDiv{
+    position: relative;
+    left: 200px;
+}
+
+#ManageLocksButtonDiv{
+    position: relative;
+    left: 200px;
+}
+
+#ManageLocksButtonDiv button{
+    border: 2px solid #7e3c2d;
+    font-size: 20px;
+    border-radius: 5px;
+    color: #FFE4C4;
+    background-color: #7e3c2d;
+}
+
+#UpdateButtonDiv button{
+    border: 2px solid #7e3c2d;
+    font-size: 20px;
+    border-radius: 5px;
+    color: #FFE4C4;
+    background-color: #7e3c2d;
+}
+
+#UserImageDiv img{
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    object-position: center;
+}
+
+#ButtonsDiv{
+    position: absolute;
+    top: 175px;
+    left: 0px;
+}
+
+#ButtonsDiv input{
+    display: none;
+}
+
+#UploadNewImageButton{
+
+}
+
+#UploadNewImageLabel{
+    position: relative;
+    border: 2px solid #7e3c2d;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #7e3c2d;
+    font-size: 15px;
+    color: #FFE4C4;
+}
+
+#InputNameDiv input{
+    background: transparent;
+    border: 0;
+    font-size: 30px;
+    width: 250px;
+}
+
+#InputNameDiv input:focus{
+    outline: none;
+}
+
+#InputEmailDiv input{
+    background: transparent;
+    border: 0;
+}
+
+#InputEmailDiv input:focus{
+    outline: none;
+}

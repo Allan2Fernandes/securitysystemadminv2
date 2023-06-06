@@ -1,0 +1,38 @@
+
+
+#MainExpandedLocksRowFormDiv{
+    position: relative;
+    height: 200px;
+    width: calc(100% - 10px * 2);
+    text-align: left;
+    justify-content: space-between;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#MainExpandedLocksRowFormDiv select{
+    background: #7e3c2d;
+    font-size: 20px;
+    border-radius: 5px;
+    color: #FFE4C4;
+    padding: 5px;
+}
+
+#MainExpandedLocksRowFormDiv input{
+    background: transparent;
+    color: #7e3c2d;
+    border: 0;
+    border-bottom: 2px solid #7e3c2d;
+    font-size: 20px;
+    width: 175px;
+}
+
+#MainExpandedLocksRowFormDiv button{
+    background: #7e3c2d;
+    font-size: 20px;
+    border: 0;
+    border-radius: 5px;
+    color: #FFE4C4;
+    padding: 5px;
+}

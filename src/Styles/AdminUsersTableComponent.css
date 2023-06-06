@@ -1,0 +1,45 @@
+
+#MainAdminUsersTableComponent{
+    position: absolute;
+    width: 800px;
+    height: 600px;
+    left: calc(50% - 400px);
+    top: calc(50% + 50px - 300px);
+}
+
+#AdministerusersTable{
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid #7e3c2d;
+}
+
+#AdminUsersTableHeaderRow{
+    height: 40px;
+}
+
+#AdminUsersTableHeaderRow th{
+    background: #7e3c2d;
+    color: #e7ceb5;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#AdminUsersTableBody tr{
+    height: 40px;
+}
+
+#AdminUsersTableBody tr td{
+    text-align: center;
+    vertical-align: middle;
+    color: #7e3c2d;
+}
+
+.EvenAdminUsersRow{
+    background-color: #FFE4C4;
+}
+
+.OddAdminUsersRow{
+    background-color: #DEB887;
+}
+
+
