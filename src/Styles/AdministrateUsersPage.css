@@ -9,3 +9,12 @@
     top: 0px;
     overflow: auto;
 }
+
+#ManageUsersPageTitle{
+    position: relative;
+    width: 500px;
+    left: calc(50% - 250px + 50px);
+    text-align: center;
+    color: #7e3c2d;
+    top: calc(50% - 300px - 50px - 10px);
+}

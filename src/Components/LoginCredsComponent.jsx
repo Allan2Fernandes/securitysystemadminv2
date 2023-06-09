@@ -51,7 +51,7 @@ function LoginCredsComponent(){
             .then(data => {
                 setValidDetailsReturned(prevValidDetailsReturned =>{
                     if(prevValidDetailsReturned){
-                        localStorage.setItem('sessionToken', data);
+                        localStorage.setItem('sessionToken', data['token']);
                         navigate("/Administrateusers");
                     }
                     return prevValidDetailsReturned

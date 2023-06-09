@@ -37,7 +37,6 @@ function ExpandedRowForm(props){
         fetch(completeURL, requestOptions)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
                 setImageB64Encoding(data['image'])
             })
 
@@ -115,7 +114,9 @@ function ExpandedRowForm(props){
     }
 
     function NavigateToLocksPageClickHandler(){
-        navigate("/ManageLocksPage", {
+        //The reason why the page updates with the wrong locks when the owner is changed is because the lockIDs have not been updated
+        //The solution is to somehow fetch the lockIDs again
+        navigate("/ManageUsersLocksPage", {
             state: {
                 userId: userID,
                 lockIDs: lockIDs,

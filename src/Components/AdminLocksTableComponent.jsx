@@ -4,11 +4,19 @@ import ExpandedLocksRowForm from "./ExpandedLocksRowForm";
 
 function AdminLocksTableComponent(props){
     const [allLockData, setAllLockData] = useState([]);
+    const [userID, setUserID] = useState("");
 
     useEffect(()=>{
-        props.locksInformation.forEach(row => row['expandDetails'] = false)
+        setUserID(props.userID)
+        props.locksInformation.forEach(row => {
+            row['expandDetails'] = false
+            if(row['owner'] === props.userID){
+                row['access_type'] = "Owner"
+            }else{
+                row['access_type'] = "Guest"
+            }
+        })
         setAllLockData(props.locksInformation)
-
     }, [props])
 
     function onClickHandlerExpandDetails(index){
@@ -21,6 +29,10 @@ function AdminLocksTableComponent(props){
         setAllLockData(newAllLockData)
     }
 
+    function FetchLockInformationAgain(){
+        props.fetchLockInformation();
+    }
+
     return (
         <div id={"MainAdminLocksTableComponentDiv"}>
             <table id={"AdministerLocksTable"}>
@@ -30,6 +42,7 @@ function AdminLocksTableComponent(props){
                     <th>Lock Name</th>
                     <th>Lock Serial Number</th>
                     <th>Active status</th>
+                    <th>Owner</th>
                 </tr>
                 </thead>
                 <tbody id={"AdminLocksTableBody"}>
@@ -48,12 +61,19 @@ function AdminLocksTableComponent(props){
                            <td>
                                <input type={"checkbox"} checked={eachRow['active']} disabled={true}/>
                            </td>
+                           <td>
+                               <input type={"checkbox"} checked={eachRow['access_type'] === "Owner"} disabled={true}/>
+                           </td>
                        </tr>
                        {
                            eachRow['expandDetails'] &&
                            <tr>
                                <td colSpan={4}>
-                                   <ExpandedLocksRowForm eachRow={eachRow}/>
+                                   <ExpandedLocksRowForm
+                                       eachRow={eachRow}
+                                       FetchLockInformationAgain={FetchLockInformationAgain}
+                                       userID={userID}
+                                   />
                                </td>
                            </tr>
                        }

@@ -11,7 +11,6 @@ function AdminUsersTableComponent(){
     }, [])
 
     function fetchDetails(){
-        console.log("Fetch details triggered");
         var token = localStorage.getItem('sessionToken')
         var completeURL = baseURL + "api/v1/user"
         const requestOptions = {

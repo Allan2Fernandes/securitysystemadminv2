@@ -4,6 +4,7 @@ import {baseURL} from "../Constants";
 
 function ExpandedLocksRowForm(props){
     const [allUsersData, setAllUsersData] = useState([])
+    const [userID, setUserID] = useState("")
     const [lockInformation, setLockInformation] = useState({
         active: false,
         expandDetails: false,
@@ -16,6 +17,7 @@ function ExpandedLocksRowForm(props){
 
     useEffect(() =>{
         setLockInformation(props.eachRow)
+        setUserID(props.userID)
         //Get all users data
         var completeURL = baseURL + "api/v1/user"
         const requestOptions = {
@@ -32,7 +34,7 @@ function ExpandedLocksRowForm(props){
             .then(data =>{
                 setAllUsersData(data)
             })
-    }, [props.eachRow])
+    }, [props])
 
     function handleSelectionChange(event){
         var newLockInformation = structuredClone(lockInformation)
@@ -60,7 +62,6 @@ function ExpandedLocksRowForm(props){
             owner: lockInformation['owner'],
             serial: lockInformation['serial'],
             _id: lockInformation['_id']
-
         }
         console.log(requestBody)
         const requestOptions = {
@@ -73,11 +74,42 @@ function ExpandedLocksRowForm(props){
             },
             body: JSON.stringify(requestBody)
         }
-        // fetch(completeURL, requestOptions)
-        //     .then(response => response.json())
-        //     .then(data=>{
-        //         console.log(data)
-        //     })
+        fetch(completeURL, requestOptions)
+            .then(response => response.json())
+            .then(data=>{
+                console.log(data)
+                props.FetchLockInformationAgain();
+            })
+    }
+
+    function handleOnClickRemoveLockAccess(){
+        var token = localStorage.getItem('sessionToken')
+        var lock_id = lockInformation['_id']
+        var guest_id = userID
+
+        var completeURL = baseURL + "api/v1/lock/remove_access"
+        var requestBody = {
+            //lock_access: [],
+            lock_id: lock_id,
+            user_id: guest_id
+        }
+        const requestOptions = {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'token': localStorage['sessionToken']
+            },
+            body: JSON.stringify(requestBody)
+        }
+        fetch(completeURL, requestOptions)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                props.FetchLockInformationAgain();
+            })
+
     }
 
     return (
@@ -92,6 +124,10 @@ function ExpandedLocksRowForm(props){
             <input type={"text"} value={lockInformation['name']} onChange={(event) => handleLockNameChange(event)}/>
             <input type={"text"} value={lockInformation['serial']} onChange={(event) => handleLockSerialChange(event)}/>
             <button onClick={UpdateLockDetails}>Update details</button>
+            {
+                lockInformation['access_type'] !=="Owner" &&
+                <button id={"AbandonLockButton"} onClick={handleOnClickRemoveLockAccess}>Abandon Lock</button>
+            }
         </div>
     )
 }

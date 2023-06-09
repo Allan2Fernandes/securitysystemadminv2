@@ -3,8 +3,8 @@
     position: absolute;
     width: 800px;
     height: 600px;
-    left: calc(50% - 400px);
-    top: calc(50% + 50px - 300px);
+    left: calc(50% - 400px + 50px);
+    top: calc(50% - 300px);
 }
 
 #AdministerusersTable{
@@ -41,5 +41,7 @@
 .OddAdminUsersRow{
     background-color: #DEB887;
 }
+
+
 
 

@@ -1,0 +1,66 @@
+#TopBarMainDiv{
+    position: absolute;
+    background: #7e3c2d;
+    left: 0px;
+    top: 0px;
+    width: 100px;
+    height: 100%;
+}
+
+#LockLogo{
+    margin-top: 13px;
+    color: #e7ceb5;
+    font-size:66px;
+}
+
+#NavigateToUsersPageDiv{
+    width: 100%;
+}
+
+#NavigateToUsersPageButton{
+    position: relative;
+    top: 20px;
+    margin: 5px;
+    width: calc(100% - 10px);
+    height: calc(40px - 10px);
+    background: #e7ceb5;
+    border: 0;
+    color: #7e3c2d;
+    border-radius: 15px;
+}
+
+#NavigateToLocksPageButton{
+    position: relative;
+    top: 20px;
+    margin: 5px;
+    width: calc(100% - 10px);
+    height: calc(40px - 10px);
+    background: #e7ceb5;
+    border: 0;
+    color: #7e3c2d;
+    border-radius: 15px;
+}
+
+#NavigateToInvitationsPageButton{
+    position: relative;
+    top: 20px;
+    margin: 5px;
+    width: calc(100% - 10px);
+    height: calc(40px - 10px);
+    background: #e7ceb5;
+    border: 0;
+    color: #7e3c2d;
+    border-radius: 15px;
+}
+
+#NavigateToLogsPageButton{
+    position: relative;
+    top: 20px;
+    margin: 5px;
+    width: calc(100% - 10px);
+    height: calc(40px - 10px);
+    background: #e7ceb5;
+    border: 0;
+    color: #7e3c2d;
+    border-radius: 15px;
+}

@@ -1,13 +1,16 @@
 import React from "react";
 import LoginPage from "../Pages/LoginPage";
 import AdministrateUsersPage from "../Pages/AdministrateUsersPage";
-import ManageLocksPage from "../Pages/ManageLocksPage";
+import ManageUsersLocksPage from "../Pages/ManageUsersLocksPage";
 import {
     BrowserRouter as Router,
     Routes ,
     Route,
     Link
 } from "react-router-dom";
+import AdministerAllLocksPage from "../Pages/AdministerAllLocksPage";
+import AdministerAllInvitationsPage from "../Pages/AdministerAllInvitationsPage";
+import ManageAllLogsPage from "../Pages/ManageAllLogsPage";
 
 
 function App(){
@@ -17,7 +20,10 @@ function App(){
                 <Routes>
                     <Route path={"/"} element={<LoginPage/>}/>
                     <Route path={"/Administrateusers"} element={<AdministrateUsersPage/>}/>
-                    <Route path={"/ManageLocksPage"} element={<ManageLocksPage/>}/>
+                    <Route path={"/ManageUsersLocksPage"} element={<ManageUsersLocksPage/>}/>
+                    <Route path={"/AdministerAllLocksPage"} element={<AdministerAllLocksPage/>}/>
+                    <Route path={"/AdministerAllInvitations"} element={<AdministerAllInvitationsPage/>}/>
+                    <Route path={"/ManageAllLogsPage"} element={<ManageAllLogsPage/>}/>
                 </Routes>
 
             </div>

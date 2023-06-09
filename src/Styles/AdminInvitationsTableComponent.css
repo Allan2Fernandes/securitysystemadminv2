@@ -1,0 +1,50 @@
+
+#MainDivInvitationsTable{
+    position: absolute;
+    width: 1000px;
+    height: 600px;
+    left: calc(50% - 500px + 50px);
+    top: calc(50% - 300px);
+    overflow: auto;
+
+}
+
+
+#InvitationsTable{
+    position: relative;
+    border-collapse: collapse;
+    width: 100%;
+    border: 2px solid #7e3c2d;
+}
+
+#InvitationsTable thead tr{
+    background: #7e3c2d;
+    color: #e7ceb5;
+    height: 50px;
+}
+
+#InvitationsTable thead tr th{
+    background: #7e3c2d;
+    color: #e7ceb5;
+}
+
+#DeleteButton{
+    background: transparent;
+}
+
+#DeleteIcon{
+    color: #7e3c2d;
+}
+
+#InvitationsTableBodyRow{
+    text-align: center;
+    height: 40px;
+}
+
+.EvenRow{
+    background-color: #FFE4C4;
+}
+
+.OddRow{
+    background-color: #DEB887;
+}

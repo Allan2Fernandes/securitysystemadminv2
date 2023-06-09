@@ -2,14 +2,14 @@
 
 #MainExpandedLocksRowFormDiv{
     position: relative;
-    height: 200px;
+    height: 100px;
     width: calc(100% - 10px * 2);
-    text-align: left;
-    justify-content: space-between;
     margin: 10px;
     display: flex;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
 }
+
 
 #MainExpandedLocksRowFormDiv select{
     background: #7e3c2d;
@@ -17,6 +17,7 @@
     border-radius: 5px;
     color: #FFE4C4;
     padding: 5px;
+    border: 0;
 }
 
 #MainExpandedLocksRowFormDiv input{
@@ -36,3 +37,10 @@
     color: #FFE4C4;
     padding: 5px;
 }
+
+#AbandonLockButton{
+    position: absolute;
+    top: 50%;
+    left: 0%;
+}
+

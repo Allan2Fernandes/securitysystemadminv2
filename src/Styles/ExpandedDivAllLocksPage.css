@@ -1,0 +1,97 @@
+
+#MainDivExpandedDivAllLocksPage{
+    margin: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    text-align: left;
+    justify-content: space-between;
+    border: 2px solid #7e3c2d;
+}
+
+#LockOwnerDiv{
+    margin-top: 15px;
+    position: relative;
+    left: 10px;
+}
+
+#LockNameDiv{
+    position: relative;
+    left: 10px;
+}
+
+#LockNameDiv input{
+    margin-left: 15px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #7e3c2d;
+}
+
+#LockSerialDiv{
+    position: relative;
+    left: 10px;
+}
+
+#LockSerialDiv input{
+    margin-left: 15px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #7e3c2d;
+}
+
+#UpdateLockDetailsDiv{
+    position: relative;
+    left: 10px;
+}
+#ListOfGuestUsersDiv{
+    position: absolute;
+    left: 300px;
+    top: 0;
+    overflow: auto;
+    height: 180px;
+}
+
+#ListOfGuestsTable{
+    margin: 15px;
+    position: relative;
+    width: 250px;
+    border: 2px solid #7e3c2d;
+    border-collapse: collapse;
+}
+
+#ListOfGuestsTable thead tr th{
+    text-align: center;
+    vertical-align: middle;
+    background: #7e3c2d;
+    color: #e7ceb5;
+
+}
+
+.EvenRow{
+    background-color: #FFE4C4;
+}
+
+.OddRow{
+    background-color: #DEB887;
+}
+
+#DeleteButton{
+    margin-left: 10px;
+    background: transparent;
+    border: 0;
+}
+
+#DeleteIcon{
+    color: #7e3c2d;
+}
+
+#UpdateLockDetailsDiv button{
+    border: 2px solid #7e3c2d;
+    font-size: 20px;
+    border-radius: 5px;
+    color: #FFE4C4;
+    background-color: #7e3c2d;
+    margin-bottom: 15px;
+    margin-left: 20px;
+}

@@ -1,12 +1,12 @@
 import React, {useEffect, useState} from "react";
 import {useLocation} from "react-router-dom";
 import {baseURL} from "../Constants";
-import TopBar from "../Components/TopBar";
+import SideBar from "../Components/SideBar";
 import "../Styles/ManageLocksPage.css"
 import AdminLocksTableComponent from "../Components/AdminLocksTableComponent";
 
 
-function ManageLocksPage(){
+function ManageUsersLocksPage(){
     const location = useLocation();
     const [userID, setUserID] = useState("");
     const [usersEmail, setUsersEmail] = useState("");
@@ -45,13 +45,16 @@ function ManageLocksPage(){
 
     return (
         <div id={"MainManageLocksPageDiv"}>
-            <TopBar/>
-            <center>
-                <h1>{"Locks of " + usersEmail}</h1>
-            </center>
-            <AdminLocksTableComponent locksInformation={locksInformation} usersEmail={usersEmail} fetchLockInformation={fetchLockInformation}/>
+            <SideBar/>
+            <h1 id={"ManageUsersLocksPageTitle"}>{usersEmail + "'s access"}</h1>
+            <AdminLocksTableComponent
+                locksInformation={locksInformation}
+                usersEmail={usersEmail}
+                fetchLockInformation={fetchLockInformation}
+                userID={userID}
+            />
         </div>
     )
 }
 
-export default ManageLocksPage
+export default ManageUsersLocksPage
