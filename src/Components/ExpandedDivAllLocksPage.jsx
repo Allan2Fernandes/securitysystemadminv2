@@ -4,6 +4,7 @@ import {baseURL} from "../Constants";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTrash} from '@fortawesome/free-solid-svg-icons';
 import {useNavigate} from "react-router-dom";
+import secureLocalStorage from "react-secure-storage";
 
 function ExpandedDivAllLocksPage(props){
     const navigate = useNavigate();
@@ -72,7 +73,7 @@ function ExpandedDivAllLocksPage(props){
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'token': localStorage.getItem('sessionToken')
+                'token': secureLocalStorage.getItem('sessionToken')
             },
             body: JSON.stringify(requestBody)
         }

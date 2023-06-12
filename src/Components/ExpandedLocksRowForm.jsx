@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import "../Styles/ExpandedLocksRowForm.css"
 import {baseURL} from "../Constants";
+import secureLocalStorage from "react-secure-storage";
 
 function ExpandedLocksRowForm(props){
     const [allUsersData, setAllUsersData] = useState([])
@@ -83,7 +84,7 @@ function ExpandedLocksRowForm(props){
     }
 
     function handleOnClickRemoveLockAccess(){
-        var token = localStorage.getItem('sessionToken')
+        var token = secureLocalStorage.getItem('sessionToken')
         var lock_id = lockInformation['_id']
         var guest_id = userID
 
@@ -126,7 +127,7 @@ function ExpandedLocksRowForm(props){
             <button onClick={UpdateLockDetails}>Update details</button>
             {
                 lockInformation['access_type'] !=="Owner" &&
-                <button id={"AbandonLockButton"} onClick={handleOnClickRemoveLockAccess}>Abandon Lock</button>
+                <button id={"AbandonLockButton"} onClick={handleOnClickRemoveLockAccess}>Remove Access</button>
             }
         </div>
     )

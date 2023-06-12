@@ -4,6 +4,7 @@ import {baseURL} from "../Constants";
 import SideBar from "../Components/SideBar";
 import "../Styles/ManageLocksPage.css"
 import AdminLocksTableComponent from "../Components/AdminLocksTableComponent";
+import secureLocalStorage from "react-secure-storage";
 
 
 function ManageUsersLocksPage(){
@@ -31,7 +32,7 @@ function ManageUsersLocksPage(){
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'token': localStorage.getItem('sessionToken')
+                'token': secureLocalStorage.getItem('sessionToken')
             }
         }
 

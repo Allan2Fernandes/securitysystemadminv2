@@ -14,6 +14,8 @@
     "react-fontawesome": "^1.7.1",
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
+    "react-secure-storage": "^1.2.2",
+    "secure-web-storage": "^1.0.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

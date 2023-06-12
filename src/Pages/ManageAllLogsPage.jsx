@@ -35,7 +35,6 @@ function ManageAllLogsPage(){
                 selectedLockID !== "" &&
                 <ManageLogsTable selectedLockID={selectedLockID}/>
             }
-
         </div>
     )
 }

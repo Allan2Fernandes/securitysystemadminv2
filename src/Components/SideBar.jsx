@@ -6,43 +6,27 @@ import {useNavigate} from "react-router-dom";
 function SideBar(){
     const navigate = useNavigate();
 
-    function navigateToHomePage(){
-        navigate("/Administrateusers")
-    }
-
-    function navigateToAllUsersPage(){
-        navigate("/Administrateusers")
-    }
-
-    function navigateToAllLocksPage(){
-        navigate("/AdministerAllLocksPage")
-    }
-
-    function navigateToAllInvitationsPage(){
-        navigate("/AdministerAllInvitations")
-    }
-
-    function navigateToAllLogsPage(){
-        navigate("/ManageAllLogsPage")
+    function navigateToPage(page){
+        navigate(page)
     }
 
     return (
         <div id={"TopBarMainDiv"}>
             <center>
-                <FontAwesomeIcon icon={faLock} id={"LockLogo"} onClick={navigateToHomePage}/>
+                <FontAwesomeIcon icon={faLock} id={"LockLogo"} onClick={() => navigateToPage("/Administrateusers")}/>
             </center>
             <div id={"NavigateToUsersPageDiv"}>
-                <button id={"NavigateToUsersPageButton"} onClick={navigateToAllUsersPage}>Users</button>
+                <button id={"NavigateToUsersPageButton"} onClick={() => navigateToPage("/Administrateusers")}>Users</button>
 
             </div>
             <div id={"NavigateToLocksPageDiv"}>
-                <button id={"NavigateToLocksPageButton"} onClick={navigateToAllLocksPage}>Locks</button>
+                <button id={"NavigateToLocksPageButton"} onClick={ () => navigateToPage("/AdministerAllLocksPage")}>Locks</button>
             </div>
             <div id={"NavigateToInvitationsPageDiv"}>
-                <button id={"NavigateToInvitationsPageButton"} onClick={navigateToAllInvitationsPage}>Invitations</button>
+                <button id={"NavigateToInvitationsPageButton"} onClick={() => navigateToPage("/AdministerAllInvitations")}>Invitations</button>
             </div>
             <div id={"NavigateToLogsPageDiv"}>
-                <button id={"NavigateToLogsPageButton"} onClick={navigateToAllLogsPage}>Logs</button>
+                <button id={"NavigateToLogsPageButton"} onClick={() => navigateToPage("/ManageAllLogsPage")}>Logs</button>
             </div>
 
         </div>

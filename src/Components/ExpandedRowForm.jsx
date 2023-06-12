@@ -3,6 +3,7 @@ import "../Styles/ExpandedRowForm.css"
 import stockImage from "../Images/defaultImage.jpg"
 import {baseURL} from "../Constants";
 import {useNavigate} from "react-router-dom";
+import secureLocalStorage from "react-secure-storage";
 
 function ExpandedRowForm(props){
     const [userData, setUserData] = useState([])
@@ -23,7 +24,7 @@ function ExpandedRowForm(props){
         setUserVerified(props.userRow['verified'])
         setUserID(props.userRow['_id'])
         setLockIDs(props.userRow['user_access'])
-        var token = localStorage.getItem('sessionToken')
+        var token = secureLocalStorage.getItem('sessionToken')
         var completeURL = baseURL + "api/v1/user/" + props.userRow['_id']
         const requestOptions = {
             method: 'GET',
@@ -88,7 +89,7 @@ function ExpandedRowForm(props){
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'token': localStorage.getItem('sessionToken')
+                'token': secureLocalStorage.getItem('sessionToken')
             },
             body: JSON.stringify(requestBody)
         }

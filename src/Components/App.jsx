@@ -25,7 +25,6 @@ function App(){
                     <Route path={"/AdministerAllInvitations"} element={<AdministerAllInvitationsPage/>}/>
                     <Route path={"/ManageAllLogsPage"} element={<ManageAllLogsPage/>}/>
                 </Routes>
-
             </div>
         </Router>
     )

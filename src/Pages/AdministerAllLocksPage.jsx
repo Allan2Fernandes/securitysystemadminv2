@@ -3,6 +3,7 @@ import "../Styles/AdministerAllLocksPage.css"
 import SideBar from "../Components/SideBar";
 import {baseURL} from "../Constants";
 import ExpandedDivAllLocksPage from "../Components/ExpandedDivAllLocksPage";
+import secureLocalStorage from "react-secure-storage";
 
 function AdministerAllLocksPage(){
     const [allLocksInformation, setAllLocksInformation] = useState([]);
@@ -24,7 +25,7 @@ function AdministerAllLocksPage(){
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'token': localStorage.getItem('sessionToken')
+                'token': secureLocalStorage.getItem('sessionToken')
             }
         }
 

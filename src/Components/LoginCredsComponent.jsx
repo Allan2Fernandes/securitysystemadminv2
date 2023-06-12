@@ -4,6 +4,7 @@ import { faUser, faUnlock, faKey } from '@fortawesome/free-solid-svg-icons'
 import {useState} from "react";
 import {baseURL} from "../Constants";
 import {useNavigate} from "react-router-dom";
+import  secureLocalStorage  from  "react-secure-storage";
 
 function LoginCredsComponent(){
     const [userName, setUserName] = useState("");
@@ -52,6 +53,7 @@ function LoginCredsComponent(){
                 setValidDetailsReturned(prevValidDetailsReturned =>{
                     if(prevValidDetailsReturned){
                         localStorage.setItem('sessionToken', data['token']);
+                        secureLocalStorage.setItem('sessionToken', data['token'])
                         navigate("/Administrateusers");
                     }
                     return prevValidDetailsReturned

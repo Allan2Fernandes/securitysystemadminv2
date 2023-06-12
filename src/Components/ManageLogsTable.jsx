@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import "../Styles/ManageLogsTable.css"
 import {baseURL} from "../Constants";
+import secureLocalStorage from "react-secure-storage";
 
 function ManageLogsTable(props){
     const [selectedLockID, setSelectedLockID] = useState("");
@@ -26,7 +27,7 @@ function ManageLogsTable(props){
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json',
-                'token': localStorage.getItem('sessionToken')
+                'token': secureLocalStorage.getItem('sessionToken')
             },
         }
 
@@ -68,9 +69,9 @@ function ManageLogsTable(props){
         }
         var targetCoordinates = event.target.getBoundingClientRect()
         setXPopUpPos(targetCoordinates.x)
-        setYPopUpPos(targetCoordinates.y + targetCoordinates.height + 10) //the popup should be 10 pixels below the target
+        //the popup should be 10 pixels below the target
+        setYPopUpPos(targetCoordinates.y + targetCoordinates.height + 10)
         setPopUpValue(value)
-
     }
 
     return (

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {baseURL} from "../Constants";
 import "../Styles/AdminUsersTableComponent.css"
 import ExpandedRowForm from "./ExpandedRowForm";
+import secureLocalStorage from "react-secure-storage";
 
 function AdminUsersTableComponent(){
     const [allUserData, setAllUserData] = useState([])
@@ -11,7 +12,7 @@ function AdminUsersTableComponent(){
     }, [])
 
     function fetchDetails(){
-        var token = localStorage.getItem('sessionToken')
+        var token = secureLocalStorage.getItem('sessionToken')
         var completeURL = baseURL + "api/v1/user"
         const requestOptions = {
             method: 'GET',

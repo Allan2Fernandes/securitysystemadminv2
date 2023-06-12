@@ -3,6 +3,7 @@ import "../Styles/AdminInvitationsTableComponent.css"
 import {baseURL} from "../Constants";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faTrash} from '@fortawesome/free-solid-svg-icons';
+import  secureLocalStorage  from  "react-secure-storage";
 
 function AdminInvitationsTableComponent(){
     const [allInvitesInfo, setAllInvitesInfo] = useState([])
@@ -31,7 +32,24 @@ function AdminInvitationsTableComponent(){
     }
 
     function deleteInvitation(event, index, eachRow){
-        console.log(eachRow)
+
+        var completeURL = baseURL + "api/v1/invite/" + eachRow['invite']['_id']
+        console.log(completeURL)
+        const requestOptions = {
+            method: 'DELETE',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'token': secureLocalStorage.getItem('sessionToken')
+            },
+        }
+
+        fetch(completeURL, requestOptions)
+            .then(response => response.json())
+            .then(data =>{
+                fetchInvitesData()
+            })
     }
 
     return(
@@ -39,6 +57,7 @@ function AdminInvitationsTableComponent(){
             <table id={"InvitationsTable"}>
                 <thead>
                     <tr id={"InvitationsTableHeaderRow"}>
+                        <th>Invitation ID</th>
                         <th>Time</th>
                         <th>From</th>
                         <th>To</th>
@@ -52,16 +71,19 @@ function AdminInvitationsTableComponent(){
                     allInvitesInfo.map((eachRow, index) =>(
                         <tr key={index} id={"InvitationsTableBodyRow"} className={index%2===0?"EvenRow":"OddRow"}>
                             <td>
-                                {eachRow['date']}
+                                {eachRow['invite']['_id']}
                             </td>
                             <td>
-                                {eachRow['from']}
+                                {eachRow['invite']['date']}
                             </td>
                             <td>
-                                {eachRow['to']}
+                                {eachRow['fromEmail']}
                             </td>
                             <td>
-                                {eachRow['lock']}
+                                {eachRow['toEmail']}
+                            </td>
+                            <td>
+                                {eachRow['invite']['lock_id']}
                             </td>
                             <td>
                                 <input type={"checkbox"} disabled={true} checked={eachRow['accepted']}/>
